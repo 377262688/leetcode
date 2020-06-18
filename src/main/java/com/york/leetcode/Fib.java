@@ -8,7 +8,7 @@ package com.york.leetcode;
 public class Fib {
 
     public static void main(String[] args) {
-        System.out.println(fib(3));
+        System.out.println(fib(4));
     }
 
     public static int fib(int i) {
@@ -18,7 +18,7 @@ public class Fib {
         int[] ints = new int[]{0,1};
         ints[0] = 0;
         ints[1] = 1;
-        if (i <= 3) {
+        for (int j = 3; j <= i; j++) {
             int cur = ints[0];
             ints[0] = ints[1];
             ints[1] = cur + ints[0];
