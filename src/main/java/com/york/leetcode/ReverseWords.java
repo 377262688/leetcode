@@ -20,8 +20,8 @@ public class ReverseWords {
     public static void main(String[] args) {
         String s = "   hello world!";
         System.out.println(reverseWords1(s));
-        String s1 = " a good   example";
-        System.out.println(reverseWords1(s1));
+        String s1 = "the sky is blue";
+        System.out.println(reverseWords2(s1));
     }
 
     public static String reverseWords1(String s) {
@@ -56,5 +56,23 @@ public class ReverseWords {
             }
         }
         return reslut;
+    }
+
+    public static String reverseWords2(String s) {
+        Stack<Character> stack = new Stack<>();
+        int i = 0;
+        StringBuilder result = new StringBuilder();
+        while (i < s.length()) {
+            char c = s.charAt(i);
+            if(c == ' ') {
+                while(!stack.isEmpty()) {
+                    result.append(stack.pop());
+                }
+                result.append(' ');
+            } else {
+                stack.push(c);
+            }
+        }
+        return result.toString();
     }
 }
