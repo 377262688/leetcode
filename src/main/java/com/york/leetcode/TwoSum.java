@@ -32,4 +32,21 @@ public class TwoSum {
         }
         throw new IllegalArgumentException("");
     }
+
+    public int[] twoSum1(int[] nums, int target) {
+        int[] result = new int[2];
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.get(target - nums[i]) != null) {
+                result[0] = target - nums[i];
+                result[1] = i;
+                return result;
+            } else {
+                map.put(nums[i], i);
+            }
+        }
+        throw new IllegalArgumentException("");
+    }
+
+
 }

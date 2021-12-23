@@ -1,5 +1,7 @@
 package com.york.leetcode;
 
+import java.util.List;
+
 /**
  * @author york
  * @create 2020-06-24 14:29
@@ -16,6 +18,7 @@ public class ReverseList {
         node2.next = node3;
         printListNode(node);
         reverseList1(node);
+        //swapPairs1(node);
         printListNode(node3);
     }
 
@@ -31,11 +34,23 @@ public class ReverseList {
     }
     // 递归解法
     private static ListNode reverseList1(ListNode node) {
-        if (node == null || node.next == null) return node;
-        ListNode p = reverseList1(node.next);
+        if (node == null || node.next == null) {
+            return node;
+        }
+        ListNode newNode = reverseList1(node.next);
         node.next.next = node;
         node.next = null;
-        return p;
+        return newNode;
+    }
+
+    // 24 交换链表
+    public static ListNode swapPairs(ListNode head) {
+        return null;
+    }
+
+    // 24 交换链表
+    public static ListNode swapPairs1(ListNode head) {
+        return null;
     }
 
     private static void printListNode(ListNode node) {
